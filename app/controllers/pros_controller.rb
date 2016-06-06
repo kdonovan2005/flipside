@@ -7,7 +7,7 @@ class ProsController < ApplicationController
   def create
     binding.pry
     @pro = Pro.create(pro_params)
-    redirect_to issues_path
+    redirect_to issue_path(@pro.issue_id)
   end
 
   private
