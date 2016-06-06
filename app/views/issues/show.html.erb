@@ -2,7 +2,7 @@
 <h3>Pros of Doing This</h3> <br>
 <ul class="pro">
   <% @issue.pros.each do |pro| %>
-  <li> <%= pro.name %> -- <%= pro.weight %> <%= link_to "X", pro_path, method: :delete %> </li> <br>
+  <li> <%= pro.name %> -- <%= pro.weight %> </li> <br>
   <% end %>
 </ul>
 <h3>Cons of Doing This</h3> <br>
