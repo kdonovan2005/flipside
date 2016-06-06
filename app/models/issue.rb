@@ -11,5 +11,4 @@ class Issue < ActiveRecord::Base
   def self.public_issues
     public_issues = Issue.where("private = ?", false)
   end
-
 end
