@@ -10,7 +10,10 @@ class IssuesController < ApplicationController
   end
 
   def create
-    @issue = Issue.create(issue_params)
+    @issue = Issue.new(issue_params)
+    @issue.pros = []
+    @issue.cons = []
+    @issue.save
     redirect_to issue_path(@issue)
   end
 

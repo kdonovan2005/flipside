@@ -444,3 +444,690 @@ ORDER BY c.conname
   [1m[35m (0.1ms)[0m  BEGIN
   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "cons" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "She shot Mal"], ["issue_id", 12], ["weight", 4], ["created_at", "2016-06-06 18:51:41.507687"], ["updated_at", "2016-06-06 18:51:41.507687"]]
   [1m[35m (0.3ms)[0m  COMMIT
+
+
+Started GET "/issues" for ::1 at 2016-06-06 14:52:28 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by IssuesController#index as HTML
+  [1m[35mIssue Load (0.7ms)[0m  SELECT "issues".* FROM "issues" WHERE (private = 'f')
+  Rendered issues/index.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 1235ms (Views: 1209.9ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/assets/cons.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-06 14:52:30 -0400
+
+
+Started GET "/assets/pros.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-06 14:52:30 -0400
+
+
+Started GET "/assets/cons.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-06 14:52:30 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-06 14:52:30 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-06-06 14:52:30 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-06 14:52:30 -0400
+
+
+Started GET "/assets/pros.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-06 14:52:30 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-06 14:52:30 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-06-06 14:52:30 -0400
+
+
+Started GET "/issues/1" for ::1 at 2016-06-06 14:52:34 -0400
+Processing by IssuesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mIssue Load (0.3ms)[0m  [1mSELECT  "issues".* FROM "issues" WHERE "issues"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered issues/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 59ms (Views: 47.1ms | ActiveRecord: 0.4ms)
+  [1m[36m (3.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.2ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20160606180429)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (4.0ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "name" character varying, "email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160606180429"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateCons (20160606182344)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (3.6ms)[0m  [1mCREATE TABLE "cons" ("id" serial primary key, "issue_id" integer, "name" character varying, "weight" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160606182344"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateIssues (20160606183931)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (3.4ms)[0m  [1mCREATE TABLE "issues" ("id" serial primary key, "name" character varying, "user_id" integer, "open" boolean, "private" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160606183931"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreatePros (20160606184025)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (3.7ms)[0m  [1mCREATE TABLE "pros" ("id" serial primary key, "name" character varying, "issue_id" integer, "weight" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160606184025"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (5.5ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'cons'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.3ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'issues'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (3.2ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'pros'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.0ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Malcolm Reynolds"], ["email", "mal@firefly.com"], ["created_at", "2016-06-06 18:53:11.568798"], ["updated_at", "2016-06-06 18:53:11.568798"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "Kaylee Frye"], ["email", "kaylee@firefly.com"], ["created_at", "2016-06-06 18:53:11.574467"], ["updated_at", "2016-06-06 18:53:11.574467"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Zoe Washburne"], ["email", "zoe@firefly.com"], ["created_at", "2016-06-06 18:53:11.576306"], ["updated_at", "2016-06-06 18:53:11.576306"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "Hoban 'Wash' Washburne"], ["email", "wash@firefly.com"], ["created_at", "2016-06-06 18:53:11.578010"], ["updated_at", "2016-06-06 18:53:11.578010"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Inara Serra"], ["email", "inara@firefly.com"], ["created_at", "2016-06-06 18:53:11.579729"], ["updated_at", "2016-06-06 18:53:11.579729"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "Jayne Cobb"], ["email", "jayne@firefly.com"], ["created_at", "2016-06-06 18:53:11.581772"], ["updated_at", "2016-06-06 18:53:11.581772"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Simon Tam"], ["email", "simon@firefly.com"], ["created_at", "2016-06-06 18:53:11.583483"], ["updated_at", "2016-06-06 18:53:11.583483"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "River Tam"], ["email", "river@firefly.com"], ["created_at", "2016-06-06 18:53:11.585044"], ["updated_at", "2016-06-06 18:53:11.585044"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Derrial Book"], ["email", "book@firefly.com"], ["created_at", "2016-06-06 18:53:11.587094"], ["updated_at", "2016-06-06 18:53:11.587094"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "issues" ("name", "user_id", "open", "private", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "Spotted Reavers?"], ["user_id", 1], ["open", "t"], ["private", "f"], ["created_at", "2016-06-06 18:53:11.597895"], ["updated_at", "2016-06-06 18:53:11.597895"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "issues" ("name", "user_id", "open", "private", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Fix or replace parts?"], ["user_id", 2], ["open", "t"], ["private", "f"], ["created_at", "2016-06-06 18:53:11.600542"], ["updated_at", "2016-06-06 18:53:11.600542"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "issues" ("name", "user_id", "open", "private", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "Abandon Saffron?"], ["user_id", 1], ["open", "t"], ["private", "f"], ["created_at", "2016-06-06 18:53:11.602480"], ["updated_at", "2016-06-06 18:53:11.602480"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "issues" ("name", "user_id", "open", "private", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "New client?"], ["user_id", 5], ["open", "t"], ["private", "t"], ["created_at", "2016-06-06 18:53:11.605194"], ["updated_at", "2016-06-06 18:53:11.605194"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "issues" ("name", "user_id", "open", "private", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "What to do with River"], ["user_id", 1], ["open", "t"], ["private", "f"], ["created_at", "2016-06-06 18:53:11.607191"], ["updated_at", "2016-06-06 18:53:11.607191"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "issues" ("name", "user_id", "open", "private", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Keep Atherton?"], ["user_id", 5], ["open", "t"], ["private", "t"], ["created_at", "2016-06-06 18:53:11.609107"], ["updated_at", "2016-06-06 18:53:11.609107"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "issues" ("name", "user_id", "open", "private", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "Contact Parents?"], ["user_id", 7], ["open", "t"], ["private", "f"], ["created_at", "2016-06-06 18:53:11.611017"], ["updated_at", "2016-06-06 18:53:11.611017"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "issues" ("name", "user_id", "open", "private", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Have dealings with Patience"], ["user_id", 1], ["open", "t"], ["private", "f"], ["created_at", "2016-06-06 18:53:11.612998"], ["updated_at", "2016-06-06 18:53:11.612998"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "pros" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "They might go by and leave us alone"], ["issue_id", 1], ["weight", 3], ["created_at", "2016-06-06 18:53:11.620434"], ["updated_at", "2016-06-06 18:53:11.620434"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pros" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "They might not chase"], ["issue_id", 2], ["weight", 5], ["created_at", "2016-06-06 18:53:11.623167"], ["updated_at", "2016-06-06 18:53:11.623167"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pros" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Quick fix"], ["issue_id", 3], ["weight", 4], ["created_at", "2016-06-06 18:53:11.624958"], ["updated_at", "2016-06-06 18:53:11.624958"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pros" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Probably won't break again for a while"], ["issue_id", 4], ["weight", 5], ["created_at", "2016-06-06 18:53:11.626639"], ["updated_at", "2016-06-06 18:53:11.626639"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "pros" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Gets rid of the crazy chick"], ["issue_id", 5], ["weight", 4], ["created_at", "2016-06-06 18:53:11.628521"], ["updated_at", "2016-06-06 18:53:11.628521"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pros" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "More money"], ["issue_id", 6], ["weight", 2], ["created_at", "2016-06-06 18:53:11.630599"], ["updated_at", "2016-06-06 18:53:11.630599"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pros" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Might be a reward in it"], ["issue_id", 7], ["weight", 3], ["created_at", "2016-06-06 18:53:11.632283"], ["updated_at", "2016-06-06 18:53:11.632283"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pros" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Keeps us far away from the authorities"], ["issue_id", 8], ["weight", 5], ["created_at", "2016-06-06 18:53:11.633874"], ["updated_at", "2016-06-06 18:53:11.633874"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pros" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "He pays well"], ["issue_id", 9], ["weight", 1], ["created_at", "2016-06-06 18:53:11.635451"], ["updated_at", "2016-06-06 18:53:11.635451"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pros" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "They have money and could help hide her"], ["issue_id", 10], ["weight", 3], ["created_at", "2016-06-06 18:53:11.637226"], ["updated_at", "2016-06-06 18:53:11.637226"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pros" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "They might turn her in"], ["issue_id", 11], ["weight", 5], ["created_at", "2016-06-06 18:53:11.639327"], ["updated_at", "2016-06-06 18:53:11.639327"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pros" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "She can pay"], ["issue_id", 12], ["weight", 5], ["created_at", "2016-06-06 18:53:11.640982"], ["updated_at", "2016-06-06 18:53:11.640982"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "cons" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "They might come raid for spare parts"], ["issue_id", 1], ["weight", 4], ["created_at", "2016-06-06 18:53:11.648167"], ["updated_at", "2016-06-06 18:53:11.648167"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "cons" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "They might chase on principle"], ["issue_id", 2], ["weight", 5], ["created_at", "2016-06-06 18:53:11.650505"], ["updated_at", "2016-06-06 18:53:11.650505"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "cons" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Might break again soon"], ["issue_id", 3], ["weight", 5], ["created_at", "2016-06-06 18:53:11.652228"], ["updated_at", "2016-06-06 18:53:11.652228"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "cons" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Costs money"], ["issue_id", 4], ["weight", 5], ["created_at", "2016-06-06 18:53:11.654336"], ["updated_at", "2016-06-06 18:53:11.654336"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "cons" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Moderately inhumane"], ["issue_id", 5], ["weight", 5], ["created_at", "2016-06-06 18:53:11.656611"], ["updated_at", "2016-06-06 18:53:11.656611"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "cons" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Might have to deal with an asshole"], ["issue_id", 6], ["weight", 4], ["created_at", "2016-06-06 18:53:11.658360"], ["updated_at", "2016-06-06 18:53:11.658360"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "cons" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Authorities might want to search ship"], ["issue_id", 7], ["weight", 4], ["created_at", "2016-06-06 18:53:11.660134"], ["updated_at", "2016-06-06 18:53:11.660134"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "cons" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Never know when she'll freak out"], ["issue_id", 8], ["weight", 3], ["created_at", "2016-06-06 18:53:11.662128"], ["updated_at", "2016-06-06 18:53:11.662128"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "cons" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "He's an asshole"], ["issue_id", 9], ["weight", 5], ["created_at", "2016-06-06 18:53:11.663940"], ["updated_at", "2016-06-06 18:53:11.663940"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "cons" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "They might turn her into authorities"], ["issue_id", 10], ["weight", 5], ["created_at", "2016-06-06 18:53:11.665558"], ["updated_at", "2016-06-06 18:53:11.665558"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "cons" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "They're her parents too"], ["issue_id", 11], ["weight", 1], ["created_at", "2016-06-06 18:53:11.667139"], ["updated_at", "2016-06-06 18:53:11.667139"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "cons" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "She shot Mal"], ["issue_id", 12], ["weight", 4], ["created_at", "2016-06-06 18:53:11.668774"], ["updated_at", "2016-06-06 18:53:11.668774"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+
+
+Started GET "/issues" for ::1 at 2016-06-06 14:53:35 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by IssuesController#index as HTML
+  [1m[35mIssue Load (0.6ms)[0m  SELECT "issues".* FROM "issues" WHERE (private = 'f')
+  Rendered issues/index.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 289ms (Views: 268.1ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/assets/pros.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-06 14:53:36 -0400
+
+
+Started GET "/assets/issues.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-06 14:53:36 -0400
+
+
+Started GET "/assets/cons.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-06 14:53:36 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-06 14:53:36 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-06 14:53:36 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-06 14:53:36 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-06 14:53:36 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-06-06 14:53:36 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-06 14:53:36 -0400
+
+
+Started GET "/assets/cons.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-06 14:53:36 -0400
+
+
+Started GET "/assets/issues.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-06 14:53:36 -0400
+
+
+Started GET "/assets/pros.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-06 14:53:36 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-06 14:53:36 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-06 14:53:36 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-06-06 14:53:36 -0400
+
+
+Started GET "/issues/new" for ::1 at 2016-06-06 14:53:48 -0400
+Processing by IssuesController#new as HTML
+  Rendered issues/_new_form.html.erb (2.2ms)
+  Rendered issues/new.html.erb within layouts/application (8.6ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/Kristin/Development/code/Week-9/Friday/flipside/app/views/issues/_new_form.html.erb:5: syntax error, unexpected ':', expecting ')'
+...rivate, "Make issue private?" : );@output_buffer.safe_append...
+...                               ^
+/Users/Kristin/Development/code/Week-9/Friday/flipside/app/views/issues/_new_form.html.erb:10: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+             ^
+/Users/Kristin/Development/code/Week-9/Friday/flipside/app/views/issues/_new_form.html.erb:12: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/Kristin/Development/code/Week-9/Friday/flipside/app/views/issues/_new_form.html.erb:14: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/issues/_new_form.html.erb:5: syntax error, unexpected ':', expecting ')'
+  app/views/issues/_new_form.html.erb:10: syntax error, unexpected keyword_end, expecting ')'
+  app/views/issues/_new_form.html.erb:12: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/issues/_new_form.html.erb:14: syntax error, unexpected keyword_end, expecting ')'
+  app/views/issues/new.html.erb:1:in `_app_views_issues_new_html_erb__3151835531097716006_70293520210980'
+
+
+  Rendered /Users/Kristin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.1ms)
+  Rendered /Users/Kristin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/Kristin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/Kristin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (50.5ms)
+  Rendered /Users/Kristin/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/Kristin/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Kristin/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Kristin/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Kristin/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (50.4ms)
+  Rendered /Users/Kristin/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Kristin/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Kristin/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (109.2ms)
+
+
+Started GET "/issues/new" for ::1 at 2016-06-06 14:53:48 -0400
+Processing by IssuesController#new as HTML
+  Rendered issues/_new_form.html.erb (0.9ms)
+  Rendered issues/new.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/Kristin/Development/code/Week-9/Friday/flipside/app/views/issues/_new_form.html.erb:5: syntax error, unexpected ':', expecting ')'
+...rivate, "Make issue private?" : );@output_buffer.safe_append...
+...                               ^
+/Users/Kristin/Development/code/Week-9/Friday/flipside/app/views/issues/_new_form.html.erb:10: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+             ^
+/Users/Kristin/Development/code/Week-9/Friday/flipside/app/views/issues/_new_form.html.erb:12: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/Kristin/Development/code/Week-9/Friday/flipside/app/views/issues/_new_form.html.erb:14: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/issues/_new_form.html.erb:5: syntax error, unexpected ':', expecting ')'
+  app/views/issues/_new_form.html.erb:10: syntax error, unexpected keyword_end, expecting ')'
+  app/views/issues/_new_form.html.erb:12: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/issues/_new_form.html.erb:14: syntax error, unexpected keyword_end, expecting ')'
+  app/views/issues/new.html.erb:1:in `_app_views_issues_new_html_erb__3151835531097716006_70293499633520'
+
+
+  Rendered /Users/Kristin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.5ms)
+  Rendered /Users/Kristin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/Kristin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/Kristin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (48.4ms)
+  Rendered /Users/Kristin/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Kristin/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Kristin/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Kristin/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Kristin/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (45.1ms)
+  Rendered /Users/Kristin/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Kristin/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Kristin/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (94.9ms)
+
+
+Started GET "/issues/new" for ::1 at 2016-06-06 14:54:14 -0400
+Processing by IssuesController#new as HTML
+  Rendered issues/_new_form.html.erb (13.9ms)
+  Rendered issues/new.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 36ms (Views: 35.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/cons.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-06 14:54:15 -0400
+
+
+Started GET "/assets/issues.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-06 14:54:15 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-06 14:54:15 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-06 14:54:15 -0400
+
+
+Started GET "/assets/pros.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-06 14:54:15 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-06 14:54:15 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-06 14:54:15 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-06 14:54:15 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-06-06 14:54:15 -0400
+
+
+Started GET "/assets/cons.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-06 14:54:15 -0400
+
+
+Started GET "/assets/issues.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-06 14:54:15 -0400
+
+
+Started GET "/assets/pros.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-06 14:54:15 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-06 14:54:15 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-06 14:54:15 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-06-06 14:54:15 -0400
+
+
+Started GET "/issues/new" for ::1 at 2016-06-06 14:54:25 -0400
+Processing by IssuesController#new as HTML
+  Rendered issues/_new_form.html.erb (1.4ms)
+  Rendered issues/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 27ms (Views: 26.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/pros.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-06 14:54:25 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-06 14:54:25 -0400
+
+
+Started GET "/assets/cons.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-06 14:54:25 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-06 14:54:25 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-06 14:54:25 -0400
+
+
+Started GET "/assets/issues.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-06 14:54:25 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-06 14:54:25 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-06 14:54:25 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-06-06 14:54:25 -0400
+
+
+Started GET "/assets/cons.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-06 14:54:25 -0400
+
+
+Started GET "/assets/issues.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-06 14:54:25 -0400
+
+
+Started GET "/assets/pros.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-06 14:54:25 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-06 14:54:25 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-06 14:54:25 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-06-06 14:54:25 -0400
+
+
+Started POST "/issues" for ::1 at 2016-06-06 14:54:27 -0400
+Processing by IssuesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xPTNarQT3eji7LbNXABba3aEANL2LWsheNp7gtDzssMJ6pq7mUta1jnmjgCfDVGMXL3xkExS0w/hOGj97yPEZw==", "issue"=>{"name"=>"", "private"=>"0"}, "commit"=>"Create Issue"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms)
+
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"issues", :id=>nil} missing required keys: [:id]):
+  app/controllers/issues_controller.rb:14:in `create'
+
+
+  Rendered /Users/Kristin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.7ms)
+  Rendered /Users/Kristin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/Kristin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/Kristin/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (49.6ms)
+  Rendered /Users/Kristin/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/Kristin/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Kristin/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Kristin/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Kristin/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (42.6ms)
+  Rendered /Users/Kristin/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/Kristin/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Kristin/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (87.1ms)
+
+
+Started POST "/issues" for ::1 at 2016-06-06 14:54:40 -0400
+Processing by IssuesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xPTNarQT3eji7LbNXABba3aEANL2LWsheNp7gtDzssMJ6pq7mUta1jnmjgCfDVGMXL3xkExS0w/hOGj97yPEZw==", "issue"=>{"name"=>"New Issue", "private"=>"0"}, "commit"=>"Create Issue"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "issues" ("name", "private", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "New Issue"], ["private", "f"], ["created_at", "2016-06-06 18:54:40.529189"], ["updated_at", "2016-06-06 18:54:40.529189"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/issues/9
+Completed 302 Found in 5ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/issues/9" for ::1 at 2016-06-06 14:54:40 -0400
+Processing by IssuesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mIssue Load (0.3ms)[0m  SELECT  "issues".* FROM "issues" WHERE "issues"."id" = $1 LIMIT 1  [["id", 9]]
+  Rendered issues/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 22ms (Views: 16.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/issues" for ::1 at 2016-06-06 14:56:40 -0400
+Processing by IssuesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xPTNarQT3eji7LbNXABba3aEANL2LWsheNp7gtDzssMJ6pq7mUta1jnmjgCfDVGMXL3xkExS0w/hOGj97yPEZw==", "issue"=>{"name"=>"New Issue", "private"=>"0"}, "commit"=>"Create Issue"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "issues" ("name", "private", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "New Issue"], ["private", "f"], ["created_at", "2016-06-06 18:56:40.844322"], ["updated_at", "2016-06-06 18:56:40.844322"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/issues/10
+Completed 302 Found in 6ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/issues/10" for ::1 at 2016-06-06 14:56:40 -0400
+Processing by IssuesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mIssue Load (0.5ms)[0m  SELECT  "issues".* FROM "issues" WHERE "issues"."id" = $1 LIMIT 1  [["id", 10]]
+  Rendered issues/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 25ms (Views: 23.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/issues" for ::1 at 2016-06-06 14:56:46 -0400
+Processing by IssuesController#index as HTML
+  [1m[36mIssue Load (0.6ms)[0m  [1mSELECT "issues".* FROM "issues" WHERE (private = 'f')[0m
+  Rendered issues/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 43ms (Views: 41.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/issues" for ::1 at 2016-06-06 14:56:46 -0400
+Processing by IssuesController#index as HTML
+  [1m[35mIssue Load (0.3ms)[0m  SELECT "issues".* FROM "issues" WHERE (private = 'f')
+  Rendered issues/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 27ms (Views: 26.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/issues/7" for ::1 at 2016-06-06 14:59:13 -0400
+Processing by IssuesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mIssue Load (0.3ms)[0m  [1mSELECT  "issues".* FROM "issues" WHERE "issues"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mPro Load (0.3ms)[0m  SELECT "pros".* FROM "pros" WHERE "pros"."issue_id" = $1  [["issue_id", 7]]
+  [1m[36mCon Load (0.3ms)[0m  [1mSELECT "cons".* FROM "cons" WHERE "cons"."issue_id" = $1[0m  [["issue_id", 7]]
+  Rendered issues/show.html.erb within layouts/application (34.4ms)
+Completed 200 OK in 54ms (Views: 49.0ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/issues/10" for ::1 at 2016-06-06 14:59:20 -0400
+Processing by IssuesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mIssue Load (0.3ms)[0m  SELECT  "issues".* FROM "issues" WHERE "issues"."id" = $1 LIMIT 1  [["id", 10]]
+  [1m[36mPro Load (0.2ms)[0m  [1mSELECT "pros".* FROM "pros" WHERE "pros"."issue_id" = $1[0m  [["issue_id", 10]]
+  [1m[35mCon Load (0.2ms)[0m  SELECT "cons".* FROM "cons" WHERE "cons"."issue_id" = $1  [["issue_id", 10]]
+  Rendered issues/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 24ms (Views: 22.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/issues/10" for ::1 at 2016-06-06 14:59:24 -0400
+Processing by IssuesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mIssue Load (0.3ms)[0m  [1mSELECT  "issues".* FROM "issues" WHERE "issues"."id" = $1 LIMIT 1[0m  [["id", 10]]
+  [1m[35mPro Load (0.3ms)[0m  SELECT "pros".* FROM "pros" WHERE "pros"."issue_id" = $1  [["issue_id", 10]]
+  [1m[36mCon Load (0.3ms)[0m  [1mSELECT "cons".* FROM "cons" WHERE "cons"."issue_id" = $1[0m  [["issue_id", 10]]
+  Rendered issues/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 27ms (Views: 25.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/issues/9" for ::1 at 2016-06-06 14:59:26 -0400
+Processing by IssuesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mIssue Load (0.3ms)[0m  SELECT  "issues".* FROM "issues" WHERE "issues"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mPro Load (0.3ms)[0m  [1mSELECT "pros".* FROM "pros" WHERE "pros"."issue_id" = $1[0m  [["issue_id", 9]]
+  [1m[35mCon Load (0.3ms)[0m  SELECT "cons".* FROM "cons" WHERE "cons"."issue_id" = $1  [["issue_id", 9]]
+  Rendered issues/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 26ms (Views: 24.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/issues/new" for ::1 at 2016-06-06 15:01:11 -0400
+Processing by IssuesController#new as HTML
+  Rendered issues/_new_form.html.erb (1.4ms)
+  Rendered issues/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 34ms (Views: 25.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/issues.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-06 15:01:12 -0400
+
+
+Started GET "/assets/cons.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-06 15:01:12 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-06 15:01:12 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-06 15:01:12 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-06 15:01:12 -0400
+
+
+Started GET "/assets/pros.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-06 15:01:12 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-06 15:01:12 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-06 15:01:12 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-06-06 15:01:12 -0400
+
+
+Started GET "/assets/cons.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-06 15:01:12 -0400
+
+
+Started GET "/assets/issues.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-06 15:01:12 -0400
+
+
+Started GET "/assets/pros.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-06 15:01:12 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-06 15:01:12 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-06 15:01:12 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-06-06 15:01:12 -0400
+
+
+Started POST "/issues" for ::1 at 2016-06-06 15:01:16 -0400
+Processing by IssuesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"watnBZr26we89fnO+420eZLfMxPAtLPUnHEx7LMLafMMtTDUt65sOWf/wQM4gL6euObCUXrLC/oFkyKTjNsfVw==", "issue"=>{"name"=>"New", "private"=>"0"}, "commit"=>"Create Issue"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "issues" ("name", "private", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "New"], ["private", "f"], ["created_at", "2016-06-06 19:01:16.018292"], ["updated_at", "2016-06-06 19:01:16.018292"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/issues/11
+Completed 302 Found in 10ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/issues/11" for ::1 at 2016-06-06 15:01:16 -0400
+Processing by IssuesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mIssue Load (0.2ms)[0m  SELECT  "issues".* FROM "issues" WHERE "issues"."id" = $1 LIMIT 1  [["id", 11]]
+  [1m[36mPro Load (0.2ms)[0m  [1mSELECT "pros".* FROM "pros" WHERE "pros"."issue_id" = $1[0m  [["issue_id", 11]]
+  [1m[35mCon Load (0.2ms)[0m  SELECT "cons".* FROM "cons" WHERE "cons"."issue_id" = $1  [["issue_id", 11]]
+  Rendered issues/show.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 34ms (Views: 30.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/issues" for ::1 at 2016-06-06 15:01:21 -0400
+Processing by IssuesController#index as HTML
+  [1m[36mIssue Load (0.5ms)[0m  [1mSELECT "issues".* FROM "issues" WHERE (private = 'f')[0m
+  Rendered issues/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 23ms (Views: 21.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/issues" for ::1 at 2016-06-06 15:01:21 -0400
+Processing by IssuesController#index as HTML
+  [1m[35mIssue Load (0.6ms)[0m  SELECT "issues".* FROM "issues" WHERE (private = 'f')
+  Rendered issues/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 26ms (Views: 25.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/issues/7" for ::1 at 2016-06-06 15:01:24 -0400
+Processing by IssuesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mIssue Load (0.2ms)[0m  [1mSELECT  "issues".* FROM "issues" WHERE "issues"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mPro Load (0.4ms)[0m  SELECT "pros".* FROM "pros" WHERE "pros"."issue_id" = $1  [["issue_id", 7]]
+  [1m[36mCon Load (0.3ms)[0m  [1mSELECT "cons".* FROM "cons" WHERE "cons"."issue_id" = $1[0m  [["issue_id", 7]]
+  Rendered issues/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 22ms (Views: 20.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/issues/11" for ::1 at 2016-06-06 15:01:26 -0400
+Processing by IssuesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mIssue Load (0.3ms)[0m  SELECT  "issues".* FROM "issues" WHERE "issues"."id" = $1 LIMIT 1  [["id", 11]]
+  [1m[36mPro Load (0.2ms)[0m  [1mSELECT "pros".* FROM "pros" WHERE "pros"."issue_id" = $1[0m  [["issue_id", 11]]
+  [1m[35mCon Load (0.1ms)[0m  SELECT "cons".* FROM "cons" WHERE "cons"."issue_id" = $1  [["issue_id", 11]]
+  Rendered issues/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 33ms (Views: 31.0ms | ActiveRecord: 0.6ms)
