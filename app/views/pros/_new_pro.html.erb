@@ -1,0 +1,9 @@
+<%= form_for @pro do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :weight %>
+  <%= f.text_field :weight %>
+  <% binding.pry %>
+  <%= f.hidden_field "issue_id", @issue.id %>
+  <%= f.submit %>
+<% end %>

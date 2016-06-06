@@ -1,13 +1,21 @@
-<h1> <%= @issuename %> </h1> <br>
+<h1> <%= @issue.name %> </h1> <br>
 <ul>
+  Pros of Doing This <br>
   <% @issue.pros.each do |pro| %>
-  Pros of Doing This
-  <li> <%= pro.name %> </li>
+  <li> <%= pro.name %> </li> <br>
   <% end %>
 
+  Cons of Doing This <br>
   <% @issue.cons.each do |con| %>
-  Cons of Doing This
-  <li> <%= con.name %> </li>
+  <li> <%= con.name %> </li> <br>
   <% end %>
-  
 </ul>
+
+Add a new Pro <br> <br>
+<%= render 'pros/new_pro' %> <br> <br>
+
+Add a new Con <br> <br>
+<%= render 'cons/new_con' %> <br> <br>
+
+<%= link_to "Edit Issue", edit_issue_path %>
+<%= link_to "Delete Issue", issue_path, method: :delete %>
