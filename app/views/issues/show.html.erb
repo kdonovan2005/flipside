@@ -1,13 +1,14 @@
 <h1> <%= @issue.name %> </h1> <br>
-<ul>
-  <h3>Pros of Doing This</h3> <br>
+<h3>Pros of Doing This</h3> <br>
+<ul class="pro">
   <% @issue.pros.each do |pro| %>
-  <li> <%= pro.name %> </li> <br>
+  <li> <%= pro.name %> -- <%= pro.weight %> <%= link_to "X", pro_path, method: :delete %> </li> <br>
   <% end %>
-
-  <h3>Cons of Doing This</h3> <br>
+</ul>
+<h3>Cons of Doing This</h3> <br>
+<ul class="con">
   <% @issue.cons.each do |con| %>
-  <li> <%= con.name %> </li> <br>
+  <li> <%= con.name %> -- <%= con.weight %></li> <br>
   <% end %>
 </ul>
 

@@ -21,6 +21,7 @@ class IssuesController < ApplicationController
   end
 
   def show
+    binding.pry
     @pro = Pro.new
     @con = Con.new
   end
