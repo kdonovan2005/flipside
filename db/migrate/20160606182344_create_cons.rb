@@ -1,8 +1,8 @@
-class CreatePros < ActiveRecord::Migration
+class CreateCons < ActiveRecord::Migration
   def change
-    create_table :pros do |t|
-      t.string :name
+    create_table :cons do |t|
       t.integer :issue_id
+      t.string :name
       t.integer :weight
 
       t.timestamps null: false

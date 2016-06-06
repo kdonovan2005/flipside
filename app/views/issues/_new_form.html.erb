@@ -1,0 +1,10 @@
+<%= form_for @issue do |f| %>
+  <%= f.label :name, "Issue Name" %> <br>
+  <%= f.text_field :name %> <br><br>
+
+  <%= f.label :private, "Make issue private?" : %>
+  <%= f.check_box :private %>
+
+  <%= f.submit %>
+
+<% end %>
