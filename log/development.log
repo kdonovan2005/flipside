@@ -2811,4 +2811,19 @@ Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db6
 
 
 Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-06-06 15:04:58 -0400
+<<<<<<< HEAD
 >>>>>>> 0ad8c701d333d774c4a0ab58e4f2703476deca98
+=======
+
+
+Started GET "/" for ::1 at 2016-06-06 15:53:14 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/xris/.rvm/gems/ruby-2.2.3/gems/railties-4.2.6/lib/rails/templates/rails/welcome/index.html.erb (2.0ms)
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2016-06-06 15:53:17 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 47ms (Views: 46.0ms | ActiveRecord: 0.0ms)
+>>>>>>> 345381e71326d6c317ba48117ccb162e5c188a86
