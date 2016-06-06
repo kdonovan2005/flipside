@@ -268,3 +268,179 @@ ORDER BY c.conname
   [1m[35m (0.1ms)[0m  BEGIN
   [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "issues" ("name", "user_id", "open", "private", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Have dealings with Patience"], ["user_id", 1], ["open", "t"], ["private", "f"], ["created_at", "2016-06-06 18:50:19.657861"], ["updated_at", "2016-06-06 18:50:19.657861"]]
   [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Malcolm Reynolds"], ["email", "mal@firefly.com"], ["created_at", "2016-06-06 18:51:17.085910"], ["updated_at", "2016-06-06 18:51:17.085910"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "Kaylee Frye"], ["email", "kaylee@firefly.com"], ["created_at", "2016-06-06 18:51:17.091155"], ["updated_at", "2016-06-06 18:51:17.091155"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Zoe Washburne"], ["email", "zoe@firefly.com"], ["created_at", "2016-06-06 18:51:17.092875"], ["updated_at", "2016-06-06 18:51:17.092875"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "Hoban 'Wash' Washburne"], ["email", "wash@firefly.com"], ["created_at", "2016-06-06 18:51:17.094487"], ["updated_at", "2016-06-06 18:51:17.094487"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Inara Serra"], ["email", "inara@firefly.com"], ["created_at", "2016-06-06 18:51:17.096186"], ["updated_at", "2016-06-06 18:51:17.096186"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "Jayne Cobb"], ["email", "jayne@firefly.com"], ["created_at", "2016-06-06 18:51:17.097823"], ["updated_at", "2016-06-06 18:51:17.097823"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Simon Tam"], ["email", "simon@firefly.com"], ["created_at", "2016-06-06 18:51:17.099502"], ["updated_at", "2016-06-06 18:51:17.099502"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "River Tam"], ["email", "river@firefly.com"], ["created_at", "2016-06-06 18:51:17.101126"], ["updated_at", "2016-06-06 18:51:17.101126"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Derrial Book"], ["email", "book@firefly.com"], ["created_at", "2016-06-06 18:51:17.102715"], ["updated_at", "2016-06-06 18:51:17.102715"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "issues" ("name", "user_id", "open", "private", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "Spotted Reavers?"], ["user_id", 1], ["open", "t"], ["private", "f"], ["created_at", "2016-06-06 18:51:17.113236"], ["updated_at", "2016-06-06 18:51:17.113236"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "issues" ("name", "user_id", "open", "private", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Fix or replace parts?"], ["user_id", 2], ["open", "t"], ["private", "f"], ["created_at", "2016-06-06 18:51:17.115576"], ["updated_at", "2016-06-06 18:51:17.115576"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "issues" ("name", "user_id", "open", "private", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "Abandon Saffron?"], ["user_id", 1], ["open", "t"], ["private", "f"], ["created_at", "2016-06-06 18:51:17.117376"], ["updated_at", "2016-06-06 18:51:17.117376"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "issues" ("name", "user_id", "open", "private", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "New client?"], ["user_id", 5], ["open", "t"], ["private", "t"], ["created_at", "2016-06-06 18:51:17.119195"], ["updated_at", "2016-06-06 18:51:17.119195"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "issues" ("name", "user_id", "open", "private", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "What to do with River"], ["user_id", 1], ["open", "t"], ["private", "f"], ["created_at", "2016-06-06 18:51:17.121026"], ["updated_at", "2016-06-06 18:51:17.121026"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "issues" ("name", "user_id", "open", "private", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Keep Atherton?"], ["user_id", 5], ["open", "t"], ["private", "t"], ["created_at", "2016-06-06 18:51:17.122788"], ["updated_at", "2016-06-06 18:51:17.122788"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "issues" ("name", "user_id", "open", "private", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "Contact Parents?"], ["user_id", 7], ["open", "t"], ["private", "f"], ["created_at", "2016-06-06 18:51:17.124961"], ["updated_at", "2016-06-06 18:51:17.124961"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "issues" ("name", "user_id", "open", "private", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Have dealings with Patience"], ["user_id", 1], ["open", "t"], ["private", "f"], ["created_at", "2016-06-06 18:51:17.127493"], ["updated_at", "2016-06-06 18:51:17.127493"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Malcolm Reynolds"], ["email", "mal@firefly.com"], ["created_at", "2016-06-06 18:51:41.407503"], ["updated_at", "2016-06-06 18:51:41.407503"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "Kaylee Frye"], ["email", "kaylee@firefly.com"], ["created_at", "2016-06-06 18:51:41.412696"], ["updated_at", "2016-06-06 18:51:41.412696"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Zoe Washburne"], ["email", "zoe@firefly.com"], ["created_at", "2016-06-06 18:51:41.414457"], ["updated_at", "2016-06-06 18:51:41.414457"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "Hoban 'Wash' Washburne"], ["email", "wash@firefly.com"], ["created_at", "2016-06-06 18:51:41.416021"], ["updated_at", "2016-06-06 18:51:41.416021"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Inara Serra"], ["email", "inara@firefly.com"], ["created_at", "2016-06-06 18:51:41.417617"], ["updated_at", "2016-06-06 18:51:41.417617"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "Jayne Cobb"], ["email", "jayne@firefly.com"], ["created_at", "2016-06-06 18:51:41.419229"], ["updated_at", "2016-06-06 18:51:41.419229"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Simon Tam"], ["email", "simon@firefly.com"], ["created_at", "2016-06-06 18:51:41.420903"], ["updated_at", "2016-06-06 18:51:41.420903"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "River Tam"], ["email", "river@firefly.com"], ["created_at", "2016-06-06 18:51:41.422567"], ["updated_at", "2016-06-06 18:51:41.422567"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Derrial Book"], ["email", "book@firefly.com"], ["created_at", "2016-06-06 18:51:41.424203"], ["updated_at", "2016-06-06 18:51:41.424203"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "issues" ("name", "user_id", "open", "private", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "Spotted Reavers?"], ["user_id", 1], ["open", "t"], ["private", "f"], ["created_at", "2016-06-06 18:51:41.434604"], ["updated_at", "2016-06-06 18:51:41.434604"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "issues" ("name", "user_id", "open", "private", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Fix or replace parts?"], ["user_id", 2], ["open", "t"], ["private", "f"], ["created_at", "2016-06-06 18:51:41.437488"], ["updated_at", "2016-06-06 18:51:41.437488"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "issues" ("name", "user_id", "open", "private", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "Abandon Saffron?"], ["user_id", 1], ["open", "t"], ["private", "f"], ["created_at", "2016-06-06 18:51:41.439800"], ["updated_at", "2016-06-06 18:51:41.439800"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "issues" ("name", "user_id", "open", "private", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "New client?"], ["user_id", 5], ["open", "t"], ["private", "t"], ["created_at", "2016-06-06 18:51:41.442448"], ["updated_at", "2016-06-06 18:51:41.442448"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "issues" ("name", "user_id", "open", "private", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "What to do with River"], ["user_id", 1], ["open", "t"], ["private", "f"], ["created_at", "2016-06-06 18:51:41.444197"], ["updated_at", "2016-06-06 18:51:41.444197"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "issues" ("name", "user_id", "open", "private", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Keep Atherton?"], ["user_id", 5], ["open", "t"], ["private", "t"], ["created_at", "2016-06-06 18:51:41.446089"], ["updated_at", "2016-06-06 18:51:41.446089"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "issues" ("name", "user_id", "open", "private", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "Contact Parents?"], ["user_id", 7], ["open", "t"], ["private", "f"], ["created_at", "2016-06-06 18:51:41.448040"], ["updated_at", "2016-06-06 18:51:41.448040"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "issues" ("name", "user_id", "open", "private", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Have dealings with Patience"], ["user_id", 1], ["open", "t"], ["private", "f"], ["created_at", "2016-06-06 18:51:41.449744"], ["updated_at", "2016-06-06 18:51:41.449744"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "pros" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "They might go by and leave us alone"], ["issue_id", 1], ["weight", 3], ["created_at", "2016-06-06 18:51:41.456918"], ["updated_at", "2016-06-06 18:51:41.456918"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pros" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "They might not chase"], ["issue_id", 2], ["weight", 5], ["created_at", "2016-06-06 18:51:41.459392"], ["updated_at", "2016-06-06 18:51:41.459392"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pros" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Quick fix"], ["issue_id", 3], ["weight", 4], ["created_at", "2016-06-06 18:51:41.461022"], ["updated_at", "2016-06-06 18:51:41.461022"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pros" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Probably won't break again for a while"], ["issue_id", 4], ["weight", 5], ["created_at", "2016-06-06 18:51:41.462730"], ["updated_at", "2016-06-06 18:51:41.462730"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pros" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Gets rid of the crazy chick"], ["issue_id", 5], ["weight", 4], ["created_at", "2016-06-06 18:51:41.464421"], ["updated_at", "2016-06-06 18:51:41.464421"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pros" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "More money"], ["issue_id", 6], ["weight", 2], ["created_at", "2016-06-06 18:51:41.466105"], ["updated_at", "2016-06-06 18:51:41.466105"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pros" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Might be a reward in it"], ["issue_id", 7], ["weight", 3], ["created_at", "2016-06-06 18:51:41.467795"], ["updated_at", "2016-06-06 18:51:41.467795"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pros" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Keeps us far away from the authorities"], ["issue_id", 8], ["weight", 5], ["created_at", "2016-06-06 18:51:41.469488"], ["updated_at", "2016-06-06 18:51:41.469488"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pros" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "He pays well"], ["issue_id", 9], ["weight", 1], ["created_at", "2016-06-06 18:51:41.471133"], ["updated_at", "2016-06-06 18:51:41.471133"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pros" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "They have money and could help hide her"], ["issue_id", 10], ["weight", 3], ["created_at", "2016-06-06 18:51:41.472827"], ["updated_at", "2016-06-06 18:51:41.472827"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "pros" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "They might turn her in"], ["issue_id", 11], ["weight", 5], ["created_at", "2016-06-06 18:51:41.474523"], ["updated_at", "2016-06-06 18:51:41.474523"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pros" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "She can pay"], ["issue_id", 12], ["weight", 5], ["created_at", "2016-06-06 18:51:41.476197"], ["updated_at", "2016-06-06 18:51:41.476197"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "cons" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "They might come raid for spare parts"], ["issue_id", 1], ["weight", 4], ["created_at", "2016-06-06 18:51:41.483441"], ["updated_at", "2016-06-06 18:51:41.483441"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "cons" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "They might chase on principle"], ["issue_id", 2], ["weight", 5], ["created_at", "2016-06-06 18:51:41.485818"], ["updated_at", "2016-06-06 18:51:41.485818"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "cons" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Might break again soon"], ["issue_id", 3], ["weight", 5], ["created_at", "2016-06-06 18:51:41.487643"], ["updated_at", "2016-06-06 18:51:41.487643"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "cons" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Costs money"], ["issue_id", 4], ["weight", 5], ["created_at", "2016-06-06 18:51:41.489347"], ["updated_at", "2016-06-06 18:51:41.489347"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "cons" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Moderately inhumane"], ["issue_id", 5], ["weight", 5], ["created_at", "2016-06-06 18:51:41.491073"], ["updated_at", "2016-06-06 18:51:41.491073"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "cons" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Might have to deal with an asshole"], ["issue_id", 6], ["weight", 4], ["created_at", "2016-06-06 18:51:41.492793"], ["updated_at", "2016-06-06 18:51:41.492793"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "cons" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Authorities might want to search ship"], ["issue_id", 7], ["weight", 4], ["created_at", "2016-06-06 18:51:41.494497"], ["updated_at", "2016-06-06 18:51:41.494497"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "cons" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Never know when she'll freak out"], ["issue_id", 8], ["weight", 3], ["created_at", "2016-06-06 18:51:41.496199"], ["updated_at", "2016-06-06 18:51:41.496199"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "cons" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "He's an asshole"], ["issue_id", 9], ["weight", 5], ["created_at", "2016-06-06 18:51:41.497974"], ["updated_at", "2016-06-06 18:51:41.497974"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "cons" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "They might turn her into authorities"], ["issue_id", 10], ["weight", 5], ["created_at", "2016-06-06 18:51:41.499623"], ["updated_at", "2016-06-06 18:51:41.499623"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "cons" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "They're her parents too"], ["issue_id", 11], ["weight", 1], ["created_at", "2016-06-06 18:51:41.501244"], ["updated_at", "2016-06-06 18:51:41.501244"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "cons" ("name", "issue_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "She shot Mal"], ["issue_id", 12], ["weight", 4], ["created_at", "2016-06-06 18:51:41.507687"], ["updated_at", "2016-06-06 18:51:41.507687"]]
+  [1m[35m (0.3ms)[0m  COMMIT
