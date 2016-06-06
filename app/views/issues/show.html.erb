@@ -1,11 +1,11 @@
 <h1> <%= @issue.name %> </h1> <br>
 <ul>
-  Pros of Doing This <br>
+  <h3>Pros of Doing This</h3> <br>
   <% @issue.pros.each do |pro| %>
   <li> <%= pro.name %> </li> <br>
   <% end %>
 
-  Cons of Doing This <br>
+  <h3>Cons of Doing This</h3> <br>
   <% @issue.cons.each do |con| %>
   <li> <%= con.name %> </li> <br>
   <% end %>
