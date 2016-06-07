@@ -2,5 +2,8 @@
 
 <h2>Open Issues</h2>
   <% @user.issues.each do |issue| %>
-    <%= issue.name %>
+    <%= link_to issue.name, issue_path(issue) %>
 <% end %>
+<br> <br>
+<%= link_to "Edit User", edit_user_path %>
+<%= link_to "Delete User", user_path(current_user) %>

@@ -3,8 +3,9 @@
 
 <% if @issue.average_pros > @issue.average_cons %>
   <%= "Looks Positive! You should do this!" %>
-<% elsif @issue.average_pros == @issue.average_cons %>
-  <%= "Looks even, we don't have enough info to make a recommendation. Try adjusting the weights or adding additional Pros and Cons." %>
+<% elsif @issue.average_pros == @issue.average_cons%>
+  <%= "Unfortunately, this looks even and we don't have enough info to make a recommendation." %> <br>
+  <%= "Try adjusting the weights or adding additional Pros and Cons." %>
 <% else %>
   <%= "Doesn't look good. You probably shouldn't do this." %>
 <% end %>
