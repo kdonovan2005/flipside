@@ -28,7 +28,7 @@
 //= require jqBootstrapValidation.js
 //= require gmap3.min.js
 //= require appear.js
-//= require smoothscroll.js 
+//= require smoothscroll.js
 //= require submenu-fix.js
 //= require contact.js
 //= require custom.js
