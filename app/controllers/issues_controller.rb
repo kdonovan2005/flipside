@@ -1,5 +1,6 @@
 class IssuesController < ApplicationController
   before_action :select_issue, only: [:show, :edit, :update, :destroy]
+  before_filter :authorize
 
   def index
     @issues = Issue.open_issues && Issue.public_issues
