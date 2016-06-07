@@ -1,5 +1,6 @@
 class ProsController < ApplicationController
   before_action :select_pro, only: [:destroy]
+  before_filter :authorize
 
   def new
     @pro = Pro.new
