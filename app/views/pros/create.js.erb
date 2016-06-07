@@ -1,4 +1,2 @@
-$('input[type=submit]').click(function() {
-  var value = $('input[type=text]').val()
-  $('ul').append('<li>' + value + '</li>')
-})
+$('ul.pro').append('<li><%= @pro.name %> -- <%= @pro.weight %></li>')
+$('.recommendations').html('<h2><%= IssuesDecorator.new(@pro.issue).recommendation(@pro.issue) %></h2>')
