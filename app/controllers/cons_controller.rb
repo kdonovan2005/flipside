@@ -7,7 +7,9 @@ class ConsController < ApplicationController
 
   def create
     @con = Con.create(con_params)
-    redirect_to issue_path(@con.issue_id)
+    respond_to do |format|
+      format.js
+    end
   end
 
   private

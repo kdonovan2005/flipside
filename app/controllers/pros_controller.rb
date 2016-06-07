@@ -8,15 +8,13 @@ class ProsController < ApplicationController
 
   def create
     @pro = Pro.create(pro_params)
-    redirect_to issue_path(@pro.issue_id)
-    # respond_to do |format|
-    #   format.js
-    # end
+    respond_to do |format|
+      format.js
+    end
   end
 
   def destroy
     @pro.destroy
-    redirect_to issues_path
   end
 
   private

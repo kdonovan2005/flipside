@@ -1,0 +1,2 @@
+$('ul.con').append('<li><%= @con.name %> -- <%= @con.weight %></li>')
+$('.recommendations').html('<h2><%= IssuesDecorator.new(@con.issue).recommendation(@con.issue) %></h2>')

@@ -18,7 +18,7 @@ class Issue < ActiveRecord::Base
       weight << pro.weight
     end
     if weight.size > 0
-      weight.inject(0.0) {|sum, el| sum + el}/weight.size
+      weight.inject(0.0) {|sum, el| sum + el}
     else
       0
     end
@@ -30,7 +30,7 @@ class Issue < ActiveRecord::Base
       weight << con.weight
     end
     if weight.size > 0
-      weight.inject(0.0) {|sum, el| sum + el}/weight.size
+      weight.inject(0.0) {|sum, el| sum + el}
     else
       0
     end
