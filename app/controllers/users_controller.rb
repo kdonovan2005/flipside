@@ -20,6 +20,9 @@ class UsersController < ApplicationController
   end
 
   def edit
+    # @user = User.find(user_params)
+    @user = User.find(params[:id])
+    # binding.pry
   end
 
   def update
@@ -29,9 +32,12 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    current_user.destroy
+    redirect_to '/' #USERS INDEX
   end
 
   def show
+
   end
 
   private
