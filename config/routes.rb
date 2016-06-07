@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'issues#index'
   get '/login', to: 'sessions#new', as: :login
   get '/logout', to: 'sessions#destroy'
   get '/auth/:provider/callback', to: 'sessions#create'
