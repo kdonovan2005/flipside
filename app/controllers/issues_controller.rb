@@ -1,5 +1,6 @@
 class IssuesController < ApplicationController
   before_action :select_issue, only: [:show, :edit, :update, :destroy]
+  before_filter :authorize
 
   def index
     @issues = Issue.open_issues && Issue.public_issues
@@ -10,7 +11,9 @@ class IssuesController < ApplicationController
   end
 
   def create
-    @issue = Issue.create(issue_params)
+    @issue = Issue.new(issue_params)
+    @issue.user_id = current_user.id
+    @issue.save
     redirect_to issue_path(@issue)
   end
 

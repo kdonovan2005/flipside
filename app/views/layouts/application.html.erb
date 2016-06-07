@@ -13,6 +13,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<% if current_user %>
+  Signed in as <%= current_user.name %> | <%= link_to "Log Out", '/logout' %> | <%= link_to "Issues", '/issues' %> | <%= link_to "Users", '/users' %>
+<% else %>
+  <%= link_to 'Log In', '/login' %> | <%= link_to 'Sign Up', '/signup' %>
+<% end %>
 
 
   	<!-- PRELOADER -->

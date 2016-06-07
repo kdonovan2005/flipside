@@ -1,4 +1,5 @@
 class ConsController < ApplicationController
+  before_filter :authorize
 
   def new
     @con = Con.new

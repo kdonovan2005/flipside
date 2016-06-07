@@ -1,17 +1,13 @@
 Rails.application.routes.draw do
-  root 'issues#index'
-  get '/login', to: 'sessions#new', as: :login
+  root to: 'issues#index'
+
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
-  get '/auth/:provider/callback', to: 'sessions#create'
-  get '/auth/failure', to: 'sessions#failure'
 
-  get 'users/new'
+  get '/signup', to: 'users#new'
+  post '/users', to: 'users#create'
 
-  get 'users/create'
-
-  get 'users/destroy'
-
-  get 'users/show'
 
   resources :issues
   resources :pros
