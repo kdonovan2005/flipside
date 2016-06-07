@@ -1,11 +1,21 @@
-<h1> <%= @issue.name %> </h1> <br>
-<h3>Pros of Doing This</h3> <br>
+<h1> <%= @issue.name %> </h1>
+<h2>Issue Owner: <%= @issue.user.name %></h2> <br>
+
+<% if @issue.average_pros > @issue.average_cons %>
+  <%= "Looks Positive! You should do this!" %>
+<% elsif @issue.average_pros == @issue.average_cons %>
+  <%= "Looks even, we don't have enough info to make a recommendation. Try adjusting the weights or adding additional Pros and Cons." %>
+<% else %>
+  <%= "Doesn't look good. You probably shouldn't do this." %>
+<% end %>
+
+<h3>Pros of Doing This</h3>
 <ul class="pro">
   <% @issue.pros.each do |pro| %>
   <li> <%= pro.name %> -- <%= pro.weight %> </li> <br>
   <% end %>
 </ul>
-<h3>Cons of Doing This</h3> <br>
+<h3>Cons of Doing This</h3>
 <ul class="con">
   <% @issue.cons.each do |con| %>
   <li> <%= con.name %> -- <%= con.weight %></li> <br>

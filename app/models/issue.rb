@@ -11,4 +11,21 @@ class Issue < ActiveRecord::Base
   def self.public_issues
     public_issues = Issue.where("private = ?", false)
   end
+
+  def average_pros
+    weight = []
+    self.pros.each do |pro|
+      weight << pro.weight
+    end
+    weight.inject(0.0) {|sum, el| sum + el}/weight.size
+  end
+
+  def average_cons
+    weight = []
+    self.cons.each do |con|
+      weight << con.weight
+    end
+    weight.inject(0.0) {|sum, el| sum + el}/weight.size
+  end
+
 end
