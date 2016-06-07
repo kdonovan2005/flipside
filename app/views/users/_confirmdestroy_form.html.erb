@@ -1,0 +1,4 @@
+<%= form_for :user, method: :delete, url: user_path(current_user) do |f| %>
+  <%= current_user %>
+  <%= f.submit("Confirm Delete", class: 'btn btn-danger btn-circle btn-lg') %> <br>
+<% end %>

@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   resources :pros
   resources :cons
   resources :users
+
+  get '/users/:id/delete', to: 'users#confirmdestroy', as: 'confirmdestroy_user'
 end

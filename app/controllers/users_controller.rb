@@ -31,9 +31,15 @@ class UsersController < ApplicationController
     redirect_to user_path(@user)
   end
 
+  def confirmdestroy
+
+  end
+
   def destroy
-    current_user.destroy
-    redirect_to '/' #USERS INDEX
+    # binding.pry
+    current_user.delete
+    session[:user_id] = nil
+    redirect_to '/login'
   end
 
   def show

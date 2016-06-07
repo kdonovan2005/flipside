@@ -7,8 +7,8 @@
 
 
 <br> <br>
-<b>
-<%= link_to "Edit User", edit_user_path %>
-/
-<%= link_to "Delete User", user_path(current_user) %>
+<% if current_user == @user%>
+  <b>
+  <%= link_to "Edit User", edit_user_path %>
+<% end %>
 </b>
