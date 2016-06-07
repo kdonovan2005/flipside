@@ -2,18 +2,63 @@
 <html>
 <head>
   <title>Flipside</title>
+  <%= favicon_link_tag 'assets/images/favicon.png' %>
+
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,400italic,700" %>
+  <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700" %>
+
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<% if current_user %>
-  Signed in as <%= current_user.name %> | <%= link_to "Log Out", '/logout' %> | <%= link_to "Issues", '/issues' %> | <%= link_to "Users", '/users' %>
-<% else %>
-  <%= link_to 'Log In', '/login' %> | <%= link_to 'Sign Up', '/signup' %>
-<% end %>
 
-<%= yield %>
 
+  	<!-- SIDEBAR -->
+  	<div class="sidebar">
+
+  		<nav class="navbar navbar-custom font-alt">
+  			<div class="navbar-header">
+  				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#custom-collapse">
+  					<span class="sr-only">Toggle navigation</span>
+  					<span class="icon-bar"></span>
+  					<span class="icon-bar"></span>
+  					<span class="icon-bar"></span>
+  				</button>
+
+  				<!-- YOU LOGO HERE -->
+  				<a class="navbar-brand" href="index.html">
+  					<!-- IMAGE OR SIMPLE TEXT -->
+            flip/side
+  				</a>
+  			</div>
+
+  			<div class="collapse navbar-collapse" id="custom-collapse">
+
+  				<ul class="nav navbar-nav">
+            <% if current_user %>
+            <li><%= current_user.name %><li>
+            <li><%= link_to "Log Out", '/logout' %> </li>
+            <br>
+            <li><%= link_to "Issues", issues_path %></li>
+            <li><%= link_to "Users", users_path %></li>
+            <% else %>
+            <li><%= link_to 'Log In', '/login' %></li>
+            <li><%= link_to 'Sign Up', '/signup' %></li>
+            <% end %>
+  				</ul>
+  			</div>
+
+  		</nav>
+
+
+  	</div>
+  	<!-- /SIDEBAR -->
+    <div class="wrapper">
+      <div class="kristinopher">
+          <%= yield %>
+      </div>
+    </div>
 </body>
 </html>
