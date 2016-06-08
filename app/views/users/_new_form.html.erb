@@ -1,7 +1,20 @@
-<%= form_for :user, url: '/users' do |f| %>
+<%= form_for user, url: users_path do |f| %>
+<% if user.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      The following errors prevented this user from saving:
+    </h2>
+    <ul>
+    <% user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
   Name: <br> <%= f.text_field :name %> <br> <br>
   Email: <br> <%= f.text_field :email %> <br> <br>
-  Password: <br> <%= f.password_field :password %> <br> <br>
+  Password <em>(minimum 6 char)</em>: <br> <%= f.password_field :password %> <br> <br>
   Password Confirmation: <br> <%= f.password_field :password_confirmation %> <br> <br>
   <%= f.submit("Create!", class: 'btn btn-dark btn-circle btn-lg') %> <br>
 <% end %>
