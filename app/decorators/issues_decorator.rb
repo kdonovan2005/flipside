@@ -1,9 +1,11 @@
 class IssuesDecorator < SimpleDelegator
 
   def recommendation(issue)
-    if issue.average_pros > issue.average_cons
+    pros = issue.average_pros
+    cons = issue.average_cons
+    if pros > cons
       "Looks Positive! You should do this!"
-    elsif issue.average_pros == issue.average_cons
+    elsif pros == cons
       "Unfortunately, we don't have enough info to make a recommendation. \n Try adjusting the weights or adding additional Pros and/or Cons."
     else
       "Doesn't look good. You probably shouldn't do this."
