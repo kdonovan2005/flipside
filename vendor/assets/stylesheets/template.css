@@ -1793,3 +1793,7 @@ blockquote cite{
 	.multi-columns-row .col-lg-1:nth-child(12n + 13){ clear:left; }
 
 }
+
+div.field_with_errors {
+	display: inline;
+}

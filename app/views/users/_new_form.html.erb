@@ -1,16 +1,16 @@
-<%= form_for user, url: '/users' do |f| %>
-  <% if user.errors.any? %>
-  <div ="error_explanation">
-    <div class="alert alert-danger fade-in">
-      <h2>Please correct the following errors:</h2>
-      <ul>
-        <% user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
+<%= form_for user, url: users_path do |f| %>
+<% if user.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      The following errors prevented this user from saving:
+    </h2>
+    <ul>
+    <% user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
   </div>
-  <% end %>
+<% end %>
 
   Name: <br> <%= f.text_field :name %> <br> <br>
   Email: <br> <%= f.text_field :email %> <br> <br>
