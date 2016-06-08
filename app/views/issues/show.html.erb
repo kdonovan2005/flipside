@@ -8,7 +8,7 @@
 <h2>Pros of Doing This</h2>
 <ul class="pro">
   <% @issue.pros.each do |pro| %>
-  <li class="<%=pro.id%>"> <%= pro.name %> -- <%= pro.weight %> <%= link_to "X", pro_path(pro.id), method: :delete, remote: true %></li>
+  <li data-id="<%= pro.id %>"> <%= pro.name %> -- <%= pro.weight %>   <%= link_to "X", pro_path(pro.id), method: :delete, remote: true, class: 'delete_button'%></li>
 <% end %>
 </ul>
 <h2>Cons of Doing This</h2>
