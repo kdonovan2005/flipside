@@ -1,2 +1,2 @@
-$('ul.pro').append('<li data-id="<%= @pro.id %>"><%= @pro.name %> -- <%= @pro.weight %> <a href="/pros/<%= @pro.id %>/" data-remote="true" data-method="delete" class="delete_button" >X</a></li>')
+$('ul.pro').append('<%= j render partial: "pro", locals: {pro: @pro} %>')
 $('.recommendations').html('<h2><%= IssuesDecorator.new(@pro.issue).recommendation(@pro.issue) %></h2>')
