@@ -1,14 +1,18 @@
 <h3><%= @user.name %></h3>
 <br>
-<h2>Open Issues</h2>
-  <% @user.issues.each do |issue| %>
+<h2>Public Issues</h2>
+  <% @public_issues.each do |issue| %>
     <%= link_to issue.name, issue_path(issue) %><br>
 <% end %>
 
 
 <br> <br>
 <% if current_user == @user%>
-  <b>
+<h2>Private Issues</h2>
+  <% @private_issues.each do |issue| %>
+    <%= link_to issue.name, issue_path(issue) %> <br>
+  <% end %>
+  <br> <br>
   <%= link_to "Edit User", edit_user_path %>
 <% end %>
 </b>

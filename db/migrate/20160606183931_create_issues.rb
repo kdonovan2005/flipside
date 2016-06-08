@@ -3,7 +3,7 @@ class CreateIssues < ActiveRecord::Migration
     create_table :issues do |t|
       t.string :name
       t.integer :user_id
-      t.boolean :open
+      t.boolean :open, default: true
       t.boolean :private
 
       t.timestamps null: false

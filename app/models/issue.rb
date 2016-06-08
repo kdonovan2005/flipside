@@ -13,6 +13,10 @@ class Issue < ActiveRecord::Base
     public_issues = Issue.where("private = ?", false)
   end
 
+  def self.private_issues
+    private_issues = Issue.where("private = ?", true)
+  end
+
   def average_pros
     @weight = []
     self.pros.each do |pro|

@@ -43,7 +43,8 @@ class UsersController < ApplicationController
   end
 
   def show
-
+    @public_issues = @user.issues.public_issues
+    @private_issues = @user.issues.private_issues
   end
 
   private
