@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   post '/users', to: 'users#create'
 
 
-  resources :issues, only: [:index, :create, :new, :destroy, :show, :update, :edit]
+  resources :issues
   resources :pros, only: [:new, :create, :destroy]
   resources :cons, only: [:new, :create, :destroy]
   resources :users, only: [:index, :new, :create, :edit, :update, :destroy, :show]

@@ -18,11 +18,13 @@
   <% end %>
 </ul>
 
-Add a new Pro <br> <br>
-<%= render 'pros/new_pro' %> <br> <br>
+<% if current_user == @issue.user %>
+  Add a new Pro <br> <br>
+  <%= render 'pros/new_pro' %> <br> <br>
 
-Add a new Con <br> <br>
-<%= render 'cons/new_con' %> <br> <br>
+  Add a new Con <br> <br>
+  <%= render 'cons/new_con' %> <br> <br>
 
-<%= link_to "Edit Issue", edit_issue_path %>
-<%= link_to "Delete Issue", issue_path, method: :delete %>
+  <%= link_to "Edit Issue", edit_issue_path %>
+  <%= link_to "Delete Issue", issue_path, method: :delete %>
+<% end %>
