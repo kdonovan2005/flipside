@@ -8,13 +8,13 @@
 <h2>Pros of Doing This</h2>
 <ul class="pro">
   <% @issue.pros.each do |pro| %>
-  <li class="<%=pro.id%>"> <%= pro.name %> -- <%= pro.weight %> <%= link_to "X", pro_path(pro.id), method: :delete, remote: true %></li>
+  <%= render partial: 'pros/pro', locals: {pro: pro} %>
 <% end %>
 </ul>
 <h2>Cons of Doing This</h2>
 <ul class="con">
   <% @issue.cons.each do |con| %>
-  <li> <%= con.name %> -- <%= con.weight %></li>
+  <%= render partial: 'cons/con', locals: {con: con} %>
   <% end %>
 </ul>
 
