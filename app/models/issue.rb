@@ -1,5 +1,6 @@
 class Issue < ActiveRecord::Base
   belongs_to :user
+  delegate :name, to: :user, prefix: true
   has_many :pros
   has_many :cons
   validates :name, presence: true
