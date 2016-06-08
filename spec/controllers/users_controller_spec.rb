@@ -28,31 +28,37 @@ describe UsersController, type: :controller do
     expect(User.new(missing_pw)).not_to be_valid
   end
 
-
+  #create a user just for the test
+  # User.new(attributes)
 
   ##EDIT CREATED FICTIONAL USER##
-  it "cannot find an existing user for updating" do
-    expect(User.edit()).not_to be_valid
-  end
+  # it "cannot find an existing user for updating" do
+  #   binding.pry
+  #   expect(User.find(params[:id]).name).to eq("Englebert Humperdinck")
+  # end
 
   ##UPDATE CREATED FICTIONAL USER##
-  it "cannot be updated without a name" do
-    expect(User.new(missing_name)).not_to be_valid
-  end
-
-  it "cannot be updated without an email" do
-    expect(User.update(missing_email)).not_to be_valid
-  end
-
-  it "cannot be updated with non-matching pw & confirmation pw" do
-    expect(User.new(missing_email)).not_to be_valid
-  end
-
+  it "cannot be updated without a name"
+  # do
+  #
+  # end
+  #
+  it "cannot be updated without an email"
+  # do
+  #
+  # end
+  #
+  it "cannot be updated with non-matching pw & confirmation pw"
+  # do
+  #   
+  # end
+  #
 
   ##DESTROY FICTIONAL CREATED USER##
-  it "cannot delete a user that is not the current logged in user" do
-
-  end
+  it "cannot delete a user that is not the current logged in user"
+  # do
+  #
+  # end
 
 
 end
