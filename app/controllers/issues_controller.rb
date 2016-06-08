@@ -14,7 +14,11 @@ class IssuesController < ApplicationController
     @issue = Issue.new(issue_params)
     @issue.user_id = current_user.id
     @issue.save
-    redirect_to issue_path(@issue)
+    if @issue.save
+      redirect_to issue_path(@issue)
+    else
+      render new_issue_path
+    end
   end
 
   def update

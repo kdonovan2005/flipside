@@ -1,4 +1,17 @@
-<%= form_for @issue do |f| %>
+<%= form_for issue do |f| %>
+  <% if issue.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        The following errors prevented this issue from saving:
+      </h2>
+      <ul>
+      <% issue.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <%= f.label :name, "Issue Name" %> <br>
   <%= f.text_field :name %> <br><br>
 
