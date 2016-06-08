@@ -2,7 +2,7 @@
 <h2>Issue Owner: <%= @issue.user_name %></h2> <br>
 
 <div class="recommendations">
-  <h2><%= IssuesDecorator.new(@issue).recommendation(@issue) %></h2>
+  <h2><strong><%= IssuesDecorator.new(@issue).recommendation(@issue) %></strong></h2><br> <br>
 </div>
 
 <h2>Pros of Doing This</h2>
@@ -16,13 +16,13 @@
   <% @issue.cons.each do |con| %>
   <%= render partial: 'cons/con', locals: {con: con} %>
   <% end %>
-</ul>
+</ul> <br>
 
 <% if current_user == @issue.user %>
-  <h4>Add a new Pro</h4> <br> <br>
+  <h4>Add a new Pro</h4> <br>
   <%= render 'pros/new_pro' %> <br> <br>
 
-  <h4>Add a new Con</h4> <br> <br>
+  <h4>Add a new Con</h4> <br>
   <%= render 'cons/new_con' %> <br> <br>
 
   <%= link_to "Edit Issue", edit_issue_path %>
