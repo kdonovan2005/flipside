@@ -1,5 +1,5 @@
 <h3> <%= @issue.name %> </h3>
-<h2>Issue Owner: <%= @issue.user.name %></h2> <br>
+<h2>Issue Owner: <%= @issue.user_name %></h2> <br>
 
 <div class="recommendations">
   <h2><%= IssuesDecorator.new(@issue).recommendation(@issue) %></h2>
