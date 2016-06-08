@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'rails_helper'
 
-describe User do
+describe UsersController, type: :controller do
   let(:attributes) do
   {
     name: "Englebert Humperdinck",
