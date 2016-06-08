@@ -1,2 +1,2 @@
-$('ul.pro').append('<li><%= @pro.name %> -- <%= @pro.weight %></li>')
+$('ul.pro').append('<li><%= @pro.name %> -- <%= @pro.weight %> <a href="/pros/<%= @pro.id %>/" data-remote="true" data-method="delete" id="pro<%= @pro.id %>">X</a></li>')
 $('.recommendations').html('<h2><%= IssuesDecorator.new(@pro.issue).recommendation(@pro.issue) %></h2>')

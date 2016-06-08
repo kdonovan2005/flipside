@@ -15,6 +15,9 @@ class ProsController < ApplicationController
 
   def destroy
     @pro.destroy
+    respond_to do |format|
+      format.js
+    end
   end
 
   private
