@@ -1,7 +1,7 @@
 <h3><%= @user.name %></h3>
 <br>
 <h2>Open Issues</h2>
-  <% @user.issues.each do |issue| %>
+  <% @public_issues.each do |issue| %>
     <%= link_to issue.name, issue_path(issue) %><br>
 <% end %>
 
