@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :issues, only: [:index, :create, :new, :destroy, :show, :update]
   resources :pros, only: [:new, :create, :destroy]
   resources :cons, only: [:new, :create, :destroy]
-  resources :users, only: [:index, :new, :create, :edit, :update, :destroy, :show]
+  resources :users, only: [:index, :new, :create, :edit, :update, :destroy, :shower]
 
   get '/users/:id/delete', to: 'users#confirmdestroy', as: 'confirmdestroy_user'
 end
