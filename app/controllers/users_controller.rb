@@ -37,7 +37,6 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    # binding.pry
     current_user.delete
     session[:user_id] = nil
     redirect_to '/login'

@@ -22,7 +22,7 @@ class Issue < ActiveRecord::Base
     self.pros.each do |pro|
       @weight << pro.weight
     end
-    sum
+    average
   end
 
   def average_cons
@@ -30,12 +30,12 @@ class Issue < ActiveRecord::Base
     self.cons.each do |con|
       @weight << con.weight
     end
-    sum
+    average
   end
 
-  def sum
+  def average
     if @weight.size > 0
-      @weight.inject(0.0) {|sum, el| sum + el}
+      @weight.inject(0.0) {|sum, el| sum + el}/@weight.size
     else
       0
     end
