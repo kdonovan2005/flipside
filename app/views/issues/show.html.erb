@@ -4,52 +4,57 @@
 <div class="recommendations">
   <h2><strong><%= IssuesDecorator.new(@issue).recommendation(@issue) %></strong></h2><br> <br>
 </div>
-
-<div class="col-sm-6">
-  <div class="accordion">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h2 class="panel-title">Pros of Doing This</h2>
-      </div>
-      <div class="panel-collapse collapse in" aria-expanded="true">
-        <div class"panel-body">
-          <ul class="pro">
-            <% @issue.pros.each do |pro| %>
-            <%= render partial: 'pros/pro', locals: {pro: pro} %>
-          <% end %>
-          </ul>
+<section class="module">
+  <div class="col-sm-6">
+    <div class="accordion">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2 class="panel-title">Pros of Doing This</h2>
+        </div>
+        <div class="panel-collapse collapse in" aria-expanded="true">
+          <div class"panel-body">
+            <ul class="pro">
+              <% @issue.pros.each do |pro| %>
+              <%= render partial: 'pros/pro', locals: {pro: pro} %>
+            <% end %>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<div class="col-sm-6">
-  <div class="accordion">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h2 class="panel-title">Cons of Doing This</h2>
-      </div>
-      <div class="panel-collapse collapse in" aria-expanded="true">
-        <div class"panel-body">
-          <ul class="con">
-            <% @issue.cons.each do |con| %>
-            <%= render partial: 'cons/con', locals: {con: con} %>
-          <% end %>
-          </ul>
+  <div class="col-sm-6">
+    <div class="accordion">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2 class="panel-title">Cons of Doing This</h2>
+        </div>
+        <div class="panel-collapse collapse in" aria-expanded="true">
+          <div class"panel-body">
+            <ul class="con">
+              <% @issue.cons.each do |con| %>
+              <%= render partial: 'cons/con', locals: {con: con} %>
+            <% end %>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+  <br>
+  <br>
+</section>
 
-<% if current_user == @issue.user %>
-  <h4>Add a new Pro</h4> <br>
-  <%= render 'pros/new_pro' %> <br> <br>
+<section class='module'>
+  <% if current_user == @issue.user %>
+    <h4>Add a new Pro</h4> <br>
+    <%= render 'pros/new_pro' %> <br> <br>
 
-  <h4>Add a new Con</h4> <br>
-  <%= render 'cons/new_con' %> <br> <br>
+    <h4>Add a new Con</h4> <br>
+    <%= render 'cons/new_con' %> <br> <br>
 
-  <%= link_to "Edit Issue", edit_issue_path %>
-  <%= link_to "Delete Issue", issue_path, method: :delete %>
-<% end %>
+    <%= link_to "Edit Issue", edit_issue_path %>
+    <%= link_to "Delete Issue", issue_path, method: :delete %>
+  <% end %>
+</section>
