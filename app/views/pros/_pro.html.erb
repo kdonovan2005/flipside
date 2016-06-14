@@ -1,1 +1,1 @@
-<li data-id="<%= pro.id %>"><%= pro.name %> -- <%= pro.weight %> <% if current_user == @issue.user %><a href="/pros/<%= pro.id %>/" data-remote="true" data-method="delete" class="delete_button" >X</a><% end %></li>
+<li data-id="<%= pro.id %>">pro: <%= pro.name %>  --  weight: <%= pro.weight %> <% if current_user == @issue.user %> <a href="/pros/<%= pro.id %>/" data-remote="true" data-method="delete" class="delete_button" >X</a><% end %></li>

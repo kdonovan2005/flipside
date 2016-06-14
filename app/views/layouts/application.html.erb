@@ -40,10 +40,9 @@
             <% if current_user %>
               <li><%= current_user.name %><li>
               <li><%= link_to "My Profile", user_path(current_user) %></li>
-              <li><%= link_to "Log Out", '/logout' %> </li>
-              <br>
               <li><%= link_to "Issues", issues_path %></li>
               <li><%= link_to "Users", users_path %></li>
+              <li><%= link_to "Log Out", '/logout' %> </li>
             <% else %>
               <li><%= link_to 'Log In', '/login' %></li>
               <li><%= link_to 'Sign Up', '/signup' %></li>
@@ -57,7 +56,7 @@
   	</div>
   	<!-- /SIDEBAR -->
     <div class="wrapper">
-      <div class="kristinopher">
+      <div class="main-view-page">
           <%= yield %>
       </div>
     </div>
