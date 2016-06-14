@@ -1,2 +1,2 @@
 $('ul.pro').append('<%= j render partial: "pro", locals: {pro: @pro} %>')
-$('.recommendations').html('<h2><strong><%= IssuesDecorator.new(@pro.issue).recommendation(@pro.issue) %></strong></h2><br><br>')
+$('.recommendations').html('<h2><strong><%= IssuesDecorator.new(@pro.issue).recommendation(@pro.issue) %></strong></h2>')

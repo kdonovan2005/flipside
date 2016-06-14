@@ -2,9 +2,10 @@
 <h2>Issue Owner: <%= @issue.user_name %></h2> <br>
 
 <div class="recommendations">
-  <h2><strong><%= IssuesDecorator.new(@issue).recommendation(@issue) %></strong></h2><br> <br>
+  <h2><strong><%= IssuesDecorator.new(@issue).recommendation(@issue) %></strong></h2>
 </div>
-<section class="module">
+
+<div class="container-fluid container-custom">
   <div class="col-sm-6">
     <div class="accordion">
       <div class="panel panel-default">
@@ -42,11 +43,13 @@
       </div>
     </div>
   </div>
-  <br>
-  <br>
-</section>
+</div>
 
-<section class='module'>
+<br>
+<br>
+<br>
+<br>
+<div class="container-fluid container-custom">
   <% if current_user == @issue.user %>
     <h4>Add a new Pro</h4> <br>
     <%= render 'pros/new_pro' %> <br> <br>
@@ -57,4 +60,4 @@
     <%= link_to "Edit Issue", edit_issue_path %>
     <%= link_to "Delete Issue", issue_path, method: :delete %>
   <% end %>
-</section>
+</div>
