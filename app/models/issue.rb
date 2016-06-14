@@ -35,7 +35,7 @@ class Issue < ActiveRecord::Base
 
   def average
     if @weight.size > 0
-      @weight.inject(0.0) {|sum, el| sum + el}/@weight.size
+      @weight.inject(0.0) {|sum, el| sum + el}
     else
       0
     end

@@ -1,1 +1,2 @@
 $('[data-id=<%=@pro.id%>]').hide()
+$('.recommendations').html('<h2><strong><%= IssuesDecorator.new(@pro.issue).recommendation(@pro.issue) %></strong></h2>')
