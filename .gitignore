@@ -1,3 +1,10 @@
-/log/*.log
+# Ignore bundler config.
+/.bundle
+
+# Ignore all logfiles and tempfiles.
+/log/*
+!/log/.keep
 /tmp
-/log
+
+# Ignore application configuration
+/config/application.yml

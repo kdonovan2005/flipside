@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
 
+  get '/auth/twitter/callback', to: "sessions#create", as: 'twitter_signin'
+  get '/auth/failure', to: 'sessions#new', as: 'twitter_fail' 
+
   get '/signup', to: 'users#new'
   post '/users', to: 'users#create'
 
