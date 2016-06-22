@@ -57,7 +57,8 @@
     <h4>Add a new Con</h4> <br>
     <%= render 'cons/new_con' %> <br> <br>
 
-    <%= link_to "Edit Issue", edit_issue_path %>
-    <%= link_to "Delete Issue", issue_path, method: :delete %>
+    <button class="btn btn-default"><%= link_to "Edit Issue", edit_issue_path %></button>
+    <button class="btn btn-default"><%= link_to "Delete Issue", issue_path, method: :delete %></button>
   <% end %>
+  <br>
 </div>
