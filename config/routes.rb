@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new'
   post '/users', to: 'users#create'
 
-
+  
   resources :issues
   resources :pros, only: [:new, :create, :destroy]
   resources :cons, only: [:new, :create, :destroy]
